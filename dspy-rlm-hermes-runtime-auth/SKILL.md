@@ -112,12 +112,12 @@ Interpret this as:
 
 Do not assume the target repo's own environment has a new enough DSPy.
 
-In live use against `laddermedia/memory-machines`, `uv sync --extra prompt-optimization` produced DSPy `3.0.4`, and that build did **not** expose `dspy.RLM`. The workaround was to run RLM in a separate temporary environment with DSPy `3.1.3` while keeping Hermes runtime auth available via `PYTHONPATH=/home/alex/.hermes/hermes-agent`.
+A project can pin an older DSPy release even when its normal install flow succeeds. In one live verification case, the repo's standard sync path installed DSPy `3.0.4`, and that build did **not** expose `dspy.RLM`. The workaround was to run RLM in a separate temporary environment with DSPy `3.1.3` while keeping Hermes runtime auth importable through `PYTHONPATH`.
 
 Practical rule:
 - first verify `hasattr(dspy, "RLM")`
 - if false, do **not** keep debugging the repo env as if RLM should be there
-- instead, spin up an isolated `uv run --with dspy-ai==3.1.3 --with openai ...` environment and import the Hermes runtime helper from a local file plus Hermes agent on `PYTHONPATH`
+- instead, spin up an isolated `uv run --with dspy-ai==3.1.3 --with openai ...` environment and point `PYTHONPATH` at your Hermes agent checkout so the runtime helper imports cleanly
 
 ## Important limits
 
@@ -182,8 +182,7 @@ print(result.answer)
 - `templates/hermes_dspy_runtime.py` — provider-aware DSPy loader
 - `templates/hermes_dspy_rlm_web_search_experiment.py` — additive experimental template that exposes Hermes `web_search` inside `dspy.RLM`
 - `references/when-to-use-rlm.md` — background and invocation guidance synthesized from paper/blog/web/X research
-- `references/experiments-web-search-bridge.md` — reversible experiment note, including restore guidance
-- `references/backups/` — point-in-time backups of the pre-experiment stable files
+- `references/version-pitfall-repo-pinned-dspy.md` — guidance for repos that pin an older DSPy without exposing `dspy.RLM`
 
 ## Codex-specific note
 

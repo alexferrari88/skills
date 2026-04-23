@@ -13,7 +13,7 @@ hasattr(dspy, "RLM")
 
 and get `False`.
 
-This happened live in `laddermedia/memory-machines`, where `uv sync --extra prompt-optimization` installed DSPy `3.0.4` and `dspy.RLM` was missing.
+A repo can pin an older DSPy even when its normal install flow succeeds. In one live verification case, the standard sync path installed DSPy `3.0.4`, and `dspy.RLM` was missing.
 
 ## Recommended fix
 
@@ -22,7 +22,7 @@ Do not fight the repo env.
 Run a separate temporary environment with a known-good DSPy version:
 
 ```bash
-PYTHONPATH=/home/alex/.hermes/hermes-agent \
+PYTHONPATH=/path/to/hermes-agent \
 uv run --with dspy-ai==3.1.3 --with openai python your_script.py
 ```
 
