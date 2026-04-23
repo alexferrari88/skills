@@ -1,10 +1,12 @@
 # skills
 
-A collection repo for reusable skills and skill-like workflows.
+A public collection repo for reusable Hermes and skills-compatible agent skills.
 
-This repository currently contains:
+## Included skills
 
 - **`hermes-deep-research`** — Hermes-native deep research skill for multi-source synthesis, verification, parallel subresearch, and decision-grade reporting.
+- **`dspy-hermes-runtime-auth`** — reuse Hermes Agent's active runtime provider, base URL, and credentials inside DSPy without copying API keys.
+- **`dspy-rlm-hermes-runtime-auth`** — companion skill for deciding when `dspy.RLM` is the right abstraction and wiring it to Hermes runtime auth cleanly.
 
 ## Repository layout
 
@@ -12,7 +14,15 @@ This repository currently contains:
 skills/
 ├── README.md
 ├── LICENSE
-└── hermes-deep-research/
+├── hermes-deep-research/
+│   ├── SKILL.md
+│   ├── references/
+│   └── templates/
+├── dspy-hermes-runtime-auth/
+│   ├── SKILL.md
+│   ├── references/
+│   └── templates/
+└── dspy-rlm-hermes-runtime-auth/
     ├── SKILL.md
     ├── references/
     └── templates/
@@ -20,51 +30,39 @@ skills/
 
 ## Install
 
-### Hermes / skills-compatible agents
+Use this collection repo with any skills-compatible agent:
 
-Install the deep research skill from this collection repo with:
+```bash
+npx skills add https://github.com/alexferrari88/skills --skill <skill-name>
+```
+
+Examples:
 
 ```bash
 npx skills add https://github.com/alexferrari88/skills --skill hermes-deep-research
+npx skills add https://github.com/alexferrari88/skills --skill dspy-hermes-runtime-auth
+npx skills add https://github.com/alexferrari88/skills --skill dspy-rlm-hermes-runtime-auth
 ```
 
-## Included skill: hermes-deep-research
+## Skill summaries
 
-### What it does
-- Multi-angle discovery
-- Full-source reading for important claims
-- Browser fallback for JS-heavy pages
-- Parallel subresearch with subagents
-- Python-backed ranking/scoring
-- Decision memo / deep report / OSS due diligence / scout brief templates
+### `hermes-deep-research`
+Best for evidence-led deep research where important claims need full-source reading, cross-checking, and structured output.
 
-### Good use cases
-- Deep research
-- Tool / vendor / model comparisons
-- Current-state / landscape reviews
-- GitHub / OSS due diligence
-- Decision memos tied to evidence
+### `dspy-hermes-runtime-auth`
+Best for portable DSPy code that should follow Hermes runtime changes across providers, models, and custom endpoints without duplicating secrets.
 
-### Not for
-- Simple lookups
-- One-source questions
-- Fast rough-answer requests
+### `dspy-rlm-hermes-runtime-auth`
+Best for long-context tasks where the model should recursively inspect and compute over a large context object instead of forcing one giant prompt through a single context window.
 
-## Canonical source-of-truth
+## Local maintenance note
 
-On this machine, the installed Hermes skill path:
+The recommended local sync pattern is:
+- treat the repo copy as the publishable source tree
+- hardlink files into `~/.hermes/skills/...` for Hermes runtime compatibility
+- avoid directory symlinks and linked-file symlinks, which can break skill discovery or linked-file loading
 
-```text
-~/.hermes/skills/research/hermes-deep-research
-```
-
-is symlinked to the repository copy at:
-
-```text
-~/src/skills/hermes-deep-research
-```
-
-That means edits made through the Hermes skill path automatically affect the repo working tree, and vice versa.
+Hardlinks keep content edits in sync for existing files, but newly added, renamed, or deleted files still need matching structural updates.
 
 ## License
 
