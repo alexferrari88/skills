@@ -61,3 +61,23 @@ Send broadcast, activity, or service intents using the `Send Intent` action.
 - **Cat**: Category (e.g., `Default`).
 - **Data**: Data URI (e.g., `https://example.com`).
 - **Extra**: Key-value extras (e.g., `key:value`).
+
+## Exporting & Importing Configurations
+
+Tasker is highly sensitive to the structure of exported XML configurations.
+
+### File Extensions
+For Tasker to recognize the XML data during an import, files must end with specific double extensions:
+- **Projects**: `.prj.xml`
+- **Profiles**: `.prf.xml`
+- **Tasks**: `.tsk.xml`
+- **Scenes**: `.scn.xml`
+
+### XML Root Structure
+Tasker requires files to start directly with the `<TaskerData>` root tag. Including standard XML headers (like `<?xml version="1.0" encoding="utf-8"?>`) or other root wrappers will fail to parse and trigger errors.
+
+### Matching Import Actions with UI Elements
+Tasker's UI contains isolated import functions. Selecting a file that doesn't match the import context will trigger errors (e.g., "no Project found"):
+- **Importing a Project**: Long-press on the Project/Home tab at the bottom of the screen and choose **Import Project**.
+- **Importing a Profile/Task/Scene**: Tap the corresponding tab at the top, long-press the tab label, and choose **Import**.
+
