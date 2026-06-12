@@ -7,26 +7,7 @@ A public collection repo for reusable Hermes and skills-compatible agent skills.
 - **`hermes-deep-research`** — Hermes-native deep research skill for multi-source synthesis, verification, parallel subresearch, and decision-grade reporting.
 - **`dspy-hermes-runtime-auth`** — reuse Hermes Agent's active runtime provider, base URL, and credentials inside DSPy without copying API keys.
 - **`dspy-rlm-hermes-runtime-auth`** — companion skill for deciding when `dspy.RLM` is the right abstraction and wiring it to Hermes runtime auth cleanly.
-
-## Repository layout
-
-```text
-skills/
-├── README.md
-├── LICENSE
-├── hermes-deep-research/
-│   ├── SKILL.md
-│   ├── references/
-│   └── templates/
-├── dspy-hermes-runtime-auth/
-│   ├── SKILL.md
-│   ├── references/
-│   └── templates/
-└── dspy-rlm-hermes-runtime-auth/
-    ├── SKILL.md
-    ├── references/
-    └── templates/
-```
+- **`tasker`** — automating Android tasks, profiles, scenes, and actions using Tasker configurations, JavaScriptlets, intents, and shell commands.
 
 ## Install
 
@@ -42,6 +23,7 @@ Examples:
 npx skills add https://github.com/alexferrari88/skills --skill hermes-deep-research
 npx skills add https://github.com/alexferrari88/skills --skill dspy-hermes-runtime-auth
 npx skills add https://github.com/alexferrari88/skills --skill dspy-rlm-hermes-runtime-auth
+npx skills add https://github.com/alexferrari88/skills --skill tasker
 ```
 
 ## Skill summaries
@@ -55,14 +37,8 @@ Best for portable DSPy code that should follow Hermes runtime changes across pro
 ### `dspy-rlm-hermes-runtime-auth`
 Best for long-context tasks where the model should recursively inspect and compute over a large context object instead of forcing one giant prompt through a single context window.
 
-## Local maintenance note
-
-The recommended local sync pattern is:
-- treat the repo copy as the publishable source tree
-- hardlink files into `~/.hermes/skills/...` for Hermes runtime compatibility
-- avoid directory symlinks and linked-file symlinks, which can break skill discovery or linked-file loading
-
-Hardlinks keep content edits in sync for existing files, but newly added, renamed, or deleted files still need matching structural updates.
+### `tasker`
+Best for creating, modifying, or debugging Android automation profiles, tasks, scenes, custom JavaScriptlets, shell commands, and intents in Tasker.
 
 ## License
 
