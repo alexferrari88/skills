@@ -8,6 +8,7 @@ A public collection repo for reusable Hermes and skills-compatible agent skills.
 - **`dspy-hermes-runtime-auth`** — reuse Hermes Agent's active runtime provider, base URL, and credentials inside DSPy without copying API keys.
 - **`dspy-rlm-hermes-runtime-auth`** — companion skill for deciding when `dspy.RLM` is the right abstraction and wiring it to Hermes runtime auth cleanly.
 - **`tasker`** — automating Android tasks, profiles, scenes, and actions using Tasker configurations, JavaScriptlets, intents, and shell commands.
+- **`teach`** — evidence-backed tutoring runtime for stateful lessons, practice, feedback, transfer, and spaced review.
 
 ## Install
 
@@ -24,6 +25,7 @@ npx skills add https://github.com/alexferrari88/skills --skill hermes-deep-resea
 npx skills add https://github.com/alexferrari88/skills --skill dspy-hermes-runtime-auth
 npx skills add https://github.com/alexferrari88/skills --skill dspy-rlm-hermes-runtime-auth
 npx skills add https://github.com/alexferrari88/skills --skill tasker
+npx skills add https://github.com/alexferrari88/skills --skill teach
 ```
 
 ## Skill summaries
@@ -39,6 +41,9 @@ Best for long-context tasks where the model should recursively inspect and compu
 
 ### `tasker`
 Best for creating, modifying, or debugging Android automation profiles, tasks, scenes, custom JavaScriptlets, shell commands, and intents in Tasker.
+
+### `teach`
+Best for adaptive tutoring sessions where the learner should attempt, receive feedback, retry, transfer, and leave durable learning records instead of just reading an explanation.
 
 ## License
 
