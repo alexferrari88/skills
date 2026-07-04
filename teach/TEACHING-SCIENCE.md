@@ -15,6 +15,29 @@ C / D     Benchmark, synthetic, preference, or early LLM evidence; useful for de
 
 ## High-confidence principles
 
+### Learner diagnosis / prior knowledge / misconception probing — A- / B+
+
+Prior knowledge strongly shapes what instruction helps, but diagnosis is method-dependent. A good tutor should gather enough evidence to choose the next teaching move; it should not run a long intake interview or treat self-reported level as ground truth.
+
+Use in `teach`:
+
+- diagnose with a short performance sample whenever practical: predict, classify, solve, debug, explain, or complete a worked step;
+- ask only the learner-context questions that change instruction: goal, adjacent experience, and what the learner needs to personally judge vs delegate;
+- use misconception-linked distractors, contrast cases, or "why?" prompts when the risk is a false-positive correct answer;
+- ask for confidence before feedback when calibration matters;
+- update the learner model continuously from attempts, feedback response, retry, and transfer; do not freeze it after the opening diagnostic.
+
+Key sources:
+
+- Dochy, Segers & Buehl (1999), prior knowledge review, DOI: https://doi.org/10.3102/00346543069002145
+- Simonsmeier et al. (2022), domain-specific prior knowledge meta-analysis, DOI: https://doi.org/10.1080/00461520.2021.1939700
+- Treagust (1988), diagnostic tests for misconceptions, DOI: https://doi.org/10.1080/0950069880100204
+- Gierl et al. (2017), multiple-choice distractor review, DOI: https://doi.org/10.3102/0034654317726529
+- Corbett & Anderson (1995), knowledge tracing, DOI: https://doi.org/10.1007/BF01099821
+- Chi et al. (2001), human tutoring, DOI: https://doi.org/10.1207/s15516709cog2504_1
+
+Caveat: diagnosis is probabilistic. Correct answers, fluent talk, or a learner's label of "beginner"/"advanced" are weak evidence by themselves. Stop diagnosing once the result changes the next teaching move.
+
 ### 1. Retrieval practice / testing effect — A+
 
 Practice testing is one of the highest-utility learning techniques. Retrieval is not just assessment; retrieving strengthens later access.
