@@ -22,7 +22,7 @@ Prior knowledge strongly shapes what instruction helps, but diagnosis is method-
 Use in `teach`:
 
 - diagnose with a short performance sample whenever practical: predict, classify, solve, debug, explain, or complete a worked step;
-- ask only the learner-context questions that change instruction: goal, adjacent experience, and what the learner needs to personally judge vs delegate;
+- ask only the learner-context questions that change instruction: goal, adjacent experience, and which decisions the learner must make independently vs can hand off to tools or collaborators;
 - use misconception-linked distractors, contrast cases, or "why?" prompts when the risk is a false-positive correct answer;
 - ask for confidence before feedback when calibration matters;
 - update the learner model continuously from attempts, feedback response, retry, and transfer; do not freeze it after the opening diagnostic.

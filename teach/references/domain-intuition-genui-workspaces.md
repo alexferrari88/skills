@@ -1,6 +1,6 @@
 # Domain-intuition generative UI workspaces
 
-Use when the learner wants intuition for a technical/domain challenge but does not want programming instruction because agents will write the code.
+Use when the learner wants intuition for a technical/domain challenge but does not want implementation instruction because implementation will be handled by tools, collaborators, or later practice.
 
 ## Pattern
 
@@ -26,7 +26,7 @@ Use when the learner wants intuition for a technical/domain challenge but does n
 
 ## Pitfalls
 
-- Do not teach Python/programming when the user's goal is domain intuition and agent direction.
+- Do not teach implementation details when the user's goal is domain intuition and implementation direction.
 - Do not make a polished static explainer and call it generative UI. The UI must adapt feedback/hints or simulate an invisible system.
 - Do not claim the toy simulator shows real results unless it is actually backed by real experiment data.
 - Do not create learning records for coverage alone; require evidence of learner performance.

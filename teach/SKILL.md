@@ -50,9 +50,7 @@ Supporting references:
 - [TEACHING-SCIENCE.md](./TEACHING-SCIENCE.md) — evidence ledger and citations.
 - [LESSON-CONTRACT.md](./LESSON-CONTRACT.md) — lesson planning template.
 - [GENUI-LESSON-FORMAT.md](./GENUI-LESSON-FORMAT.md) — gate for generative UI lessons.
-- [references/domain-intuition-genui-workspaces.md](./references/domain-intuition-genui-workspaces.md) — pattern for teaching domain intuition inside a project repo without teaching programming.
-- [references/research-lead-domain-tutoring.md](./references/research-lead-domain-tutoring.md) — pattern for teaching judgement/experiment-direction to a learner who delegates implementation.
-- [references/numerai-research-lead-tutoring.md](./references/numerai-research-lead-tutoring.md) — Alex-specific pattern for Numerai Classic research-lead tutoring with MCQ confidence checks and objection-driven experiment design.
+- [references/domain-intuition-genui-workspaces.md](./references/domain-intuition-genui-workspaces.md) — pattern for teaching domain intuition inside a project repo without turning the lesson into implementation training.
 
 ## Modes
 
@@ -124,7 +122,7 @@ Run this loop unless the user explicitly chooses direct-answer mode.
 
 2. **Diagnose**
    - Treat diagnosis as a short evidence-gathering step, not an intake interview. Default budget: 2-5 minutes or 1-3 learner turns.
-   - Ask only the learner-context questions that change the first teaching move: goal, adjacent experience, and what the learner needs to personally judge vs delegate. Do not run broad background inventories before any performance sample.
+   - Ask only the learner-context questions that change the first teaching move: goal, adjacent experience, and which decisions the learner must make independently vs can hand off to tools or collaborators. Do not run broad background inventories before any performance sample.
    - Prefer performance evidence over self-report: give one representative micro-task, prediction, classification, debug/critique, or worked-step completion. Use the response to choose a novice/intermediate/advanced path.
    - Match the diagnostic to the uncertainty:
      - placement: what can the learner already do?
