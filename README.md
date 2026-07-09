@@ -9,6 +9,7 @@ A public collection repo for reusable Hermes and skills-compatible agent skills.
 - **`dspy-rlm-hermes-runtime-auth`** — companion skill for deciding when `dspy.RLM` is the right abstraction and wiring it to Hermes runtime auth cleanly.
 - **`tasker`** — automating Android tasks, profiles, scenes, and actions using Tasker configurations, JavaScriptlets, intents, and shell commands.
 - **`teach`** — evidence-backed tutoring runtime for stateful lessons, practice, feedback, transfer, and spaced review.
+- **`agy-cli`** — use Antigravity CLI (`agy`) for agent sessions, non-interactive prompts, model discovery, and plugin management.
 
 ## Install
 
@@ -26,6 +27,7 @@ npx skills add https://github.com/alexferrari88/skills --skill dspy-hermes-runti
 npx skills add https://github.com/alexferrari88/skills --skill dspy-rlm-hermes-runtime-auth
 npx skills add https://github.com/alexferrari88/skills --skill tasker
 npx skills add https://github.com/alexferrari88/skills --skill teach
+npx skills add https://github.com/alexferrari88/skills --skill agy-cli
 ```
 
 ## Skill summaries
@@ -44,6 +46,9 @@ Best for creating, modifying, or debugging Android automation profiles, tasks, s
 
 ### `teach`
 Best for adaptive tutoring sessions where the learner should attempt, receive feedback, retry, transfer, and leave durable learning records instead of just reading an explanation.
+
+### `agy-cli`
+Best for running and managing Antigravity CLI (`agy`) sessions, models, plugins, and non-interactive prompts from an agent workflow.
 
 ## License
 

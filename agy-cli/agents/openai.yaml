@@ -1,0 +1,4 @@
+interface:
+  display_name: "Antigravity CLI"
+  short_description: "Run and manage the agy agent CLI"
+  default_prompt: "Use $agy-cli to run a non-interactive Antigravity CLI task and summarize the result."
