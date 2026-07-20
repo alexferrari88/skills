@@ -1,0 +1,7 @@
+interface:
+  display_name: "Local Web Extract"
+  short_description: "Extract URLs through local Firecrawl with Crawl4AI fallback"
+  default_prompt: "Use $local-web-extract to retrieve complete content from the supplied URL using the self-hosted extraction ladder."
+
+policy:
+  allow_implicit_invocation: true

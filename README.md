@@ -10,6 +10,7 @@ A public collection repo for reusable Hermes and skills-compatible agent skills.
 - **`tasker`** — automating Android tasks, profiles, scenes, and actions using Tasker configurations, JavaScriptlets, intents, and shell commands.
 - **`teach`** — evidence-backed tutoring runtime for stateful lessons, practice, feedback, transfer, and spaced review.
 - **`agy-cli`** — use Antigravity CLI (`agy`) for agent sessions, non-interactive prompts, model discovery, and plugin management.
+- **`local-web-extract`** — extract complete URL content through self-hosted Firecrawl with deterministic Crawl4AI fallback.
 
 ## Install
 
@@ -28,6 +29,7 @@ npx skills add https://github.com/alexferrari88/skills --skill dspy-rlm-hermes-r
 npx skills add https://github.com/alexferrari88/skills --skill tasker
 npx skills add https://github.com/alexferrari88/skills --skill teach
 npx skills add https://github.com/alexferrari88/skills --skill agy-cli
+npx skills add https://github.com/alexferrari88/skills --skill local-web-extract
 ```
 
 ## Skill summaries
@@ -49,6 +51,9 @@ Best for adaptive tutoring sessions where the learner should attempt, receive fe
 
 ### `agy-cli`
 Best for running and managing Antigravity CLI (`agy`) sessions, models, plugins, and non-interactive prompts from an agent workflow.
+
+### `local-web-extract`
+Best for complete URL extraction when ordinary agent fetching fails or is incomplete, using self-hosted Firecrawl first and Crawl4AI as a visible fallback.
 
 ## License
 
