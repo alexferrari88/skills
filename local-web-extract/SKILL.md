@@ -16,6 +16,8 @@ Use the client's ordinary web search or fetch first when it is sufficient. Use t
 - the user requests the full content of a URL
 - a difficult webpage or PDF needs a self-hosted extraction fallback
 
+For Firecrawl search, site mapping, multi-URL structured extraction, raw API access, health checks, or service troubleshooting, use the `firecrawl` skill instead.
+
 ## Default command
 
 ```bash
@@ -58,6 +60,8 @@ The helper reads `~/.config/local-web-extract/config.env`, then allows process e
 
 ```text
 FIRECRAWL_API_URL=http://127.0.0.1:8081
+# Legacy alias used only when FIRECRAWL_API_URL is unset:
+FIRECRAWL_BASE_URL=http://127.0.0.1:8081
 FIRECRAWL_API_KEY=fc-selfhost
 CRAWL4AI_API_URL=https://crawler.example.internal
 CRAWL4AI_ENV_FILE=/path/to/crawl4ai.env

@@ -5,6 +5,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 MODULE_PATH = Path(__file__).parents[1] / "scripts" / "local_web_extract.py"
@@ -134,6 +135,37 @@ class FallbackTests(unittest.TestCase):
 
         self.assertEqual(result.content, "abcde")
         self.assertTrue(result.truncated)
+
+
+class FirecrawlConfigurationTests(unittest.TestCase):
+    def _fetch_with(self, settings: dict[str, str]) -> str:
+        response = {
+            "success": True,
+            "data": {"markdown": "# Example\n\nUseful body", "metadata": {}},
+        }
+        with (
+            patch.object(local_web_extract, "validate_public_url"),
+            patch.object(local_web_extract, "_post_json", return_value=response) as post_json,
+        ):
+            local_web_extract.make_fetchers(
+                settings, timeout=10, min_chars=1
+            )["firecrawl"]("https://example.com")
+        return post_json.call_args.args[0]
+
+    def test_api_url_takes_precedence_over_legacy_alias(self) -> None:
+        endpoint = self._fetch_with(
+            {
+                "FIRECRAWL_API_URL": "https://primary.example/api/",
+                "FIRECRAWL_BASE_URL": "https://legacy.example/api/",
+            }
+        )
+        self.assertEqual(endpoint, "https://primary.example/api/v1/scrape")
+
+    def test_legacy_base_url_remains_supported(self) -> None:
+        endpoint = self._fetch_with(
+            {"FIRECRAWL_BASE_URL": "https://legacy.example/api/"}
+        )
+        self.assertEqual(endpoint, "https://legacy.example/api/v1/scrape")
 
 
 class EnvFileTests(unittest.TestCase):

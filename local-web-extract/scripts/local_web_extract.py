@@ -207,7 +207,11 @@ def make_fetchers(
     timeout: float,
     min_chars: int,
 ) -> dict[str, Callable[[str], ExtractionResult]]:
-    firecrawl_base = settings.get("FIRECRAWL_API_URL", DEFAULT_FIRECRAWL_URL).rstrip("/")
+    firecrawl_base = (
+        settings.get("FIRECRAWL_API_URL")
+        or settings.get("FIRECRAWL_BASE_URL")
+        or DEFAULT_FIRECRAWL_URL
+    ).rstrip("/")
     firecrawl_key = settings.get("FIRECRAWL_API_KEY", "fc-selfhost")
     crawl4ai_base = settings.get("CRAWL4AI_API_URL", "").rstrip("/")
     crawl4ai_token = settings.get("CRAWL4AI_API_TOKEN", "")
