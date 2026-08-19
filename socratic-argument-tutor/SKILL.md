@@ -4,11 +4,7 @@ description: Use when a user wants to learn by examining, defending, or stress-t
 version: 1.0.0
 author: Alex Ferrari, Hermes Agent
 license: MIT
-platforms:
-  - Hermes Agent
-  - Claude Code
-  - Codex
-  - skills-compatible agents
+platforms: [linux, macos, windows]
 ---
 
 # Socratic Argument Tutor
