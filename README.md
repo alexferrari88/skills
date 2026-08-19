@@ -11,6 +11,7 @@ A public collection repo for reusable Hermes and skills-compatible agent skills.
 - **`teach`** — evidence-backed tutoring runtime for stateful lessons, practice, feedback, transfer, and spaced review.
 - **`agy-cli`** — use Antigravity CLI (`agy`) for agent sessions, non-interactive prompts, model discovery, and plugin management.
 - **`local-web-extract`** — extract complete URL content through self-hosted Firecrawl with deterministic Crawl4AI fallback.
+- **`socratic-argument-tutor`** — examine, defend, or stress-test a concrete argument through neutral, evidence-aware guided dialogue.
 
 ## Install
 
@@ -30,6 +31,7 @@ npx skills add https://github.com/alexferrari88/skills --skill tasker
 npx skills add https://github.com/alexferrari88/skills --skill teach
 npx skills add https://github.com/alexferrari88/skills --skill agy-cli
 npx skills add https://github.com/alexferrari88/skills --skill local-web-extract
+npx skills add https://github.com/alexferrari88/skills --skill socratic-argument-tutor
 ```
 
 ## Skill summaries
@@ -54,6 +56,9 @@ Best for running and managing Antigravity CLI (`agy`) sessions, models, plugins,
 
 ### `local-web-extract`
 Best for complete URL extraction when ordinary agent fetching fails or is incomplete, using self-hosted Firecrawl first and Crawl4AI as a visible fallback.
+
+### `socratic-argument-tutor`
+Best for learning argument analysis by mapping a concrete claim, its grounds, and its warrant, then testing one disputed reasoning step at a time.
 
 ## License
 
