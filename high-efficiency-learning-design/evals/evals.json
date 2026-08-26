@@ -1,0 +1,135 @@
+{
+  "skill_name": "high-efficiency-learning-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm teaching an adult algebra. My current routine is a 25-minute explanation, then 30 nearly identical problems. They score 95% on the worksheet but forget most of it a week later. Redesign one 60-minute lesson and the following two weeks of review.",
+      "expected_output": "A concrete redesign that shortens passive explanation, uses worked-example-to-active-practice cycles, stops blocked overlearning after baseline mastery, and adds spaced retrieval plus interleaved cumulative review. It should distinguish immediate worksheet performance from durable learning and describe how review intervals adapt to success/failure.",
+      "files": [],
+      "assertions": [
+        "The response explicitly distinguishes immediate practice fluency from delayed retention.",
+        "The initial lesson moves the learner into active problem solving substantially earlier than 25 minutes.",
+        "The response uses a small initial block for acquisition but does not preserve 30 same-type consecutive problems after mastery.",
+        "The two-week plan contains both spacing and retrieval rather than rereading-only review.",
+        "The later reviews mix multiple previously learned problem types or otherwise train method selection."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "A student says calculus is impossible for her. She understands my derivative lectures, but when she solves problems she constantly gets signs wrong, mishandles fractions, and loses track of algebraic steps. Should I explain derivatives in a different way or tell her calculus may just not be for her?",
+      "expected_output": "A diagnostic response that rejects premature ability conclusions, localizes failures to prerequisites/working-memory load, tests algebra/fraction fluency directly, externalizes intermediate steps, and recommends targeted remediation before more derivative explanations.",
+      "files": [],
+      "assertions": [
+        "The response does not infer fixed inability from the student's current struggle.",
+        "It tests or remediates algebra/fraction prerequisites before recommending more calculus explanation.",
+        "It identifies working-memory load or intermediate-state tracking as a plausible bottleneck.",
+        "It recommends writing/externalizing steps when mental bookkeeping is unreliable.",
+        "It gives an escalation or re-test rule for returning to derivative work."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Design a first lesson for a novice on completing the square. I want them eventually to derive the quadratic formula, but they have never completed the square before.",
+      "expected_output": "A novice-appropriate sequence with direct explanation/worked examples, small increments, immediate active practice, prerequisite checks, and a plan to build procedural fluency before asking for a full derivation. Scaffolding should later fade rather than remain permanent.",
+      "files": [],
+      "assertions": [
+        "The first lesson includes an explicit worked example or direct demonstration before independent novice discovery.",
+        "The learner practices within the lesson rather than only watching an explanation.",
+        "The response checks relevant prerequisites such as algebraic manipulation or square expansion.",
+        "The response does not require the learner to discover the quadratic formula before acquiring completing-the-square fluency.",
+        "The response includes a plan to fade scaffolding or move to transfer after baseline mastery."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I can solve each LeetCode topic when I'm doing a focused set (all two pointers, all BFS, etc.), but in interviews I often don't recognize which technique to use. I have 8 weeks. How should I practice?",
+      "expected_output": "A plan that recognizes a discrimination/category-selection problem rather than only an execution problem: small blocked acquisition where needed, then mixed/interleaved retrieval across techniques, spaced recurrence, uncued problem classification, and targeted remediation of weak component techniques.",
+      "files": [],
+      "assertions": [
+        "The response identifies method selection/discrimination as a core problem.",
+        "It recommends mixed or interleaved problem practice after individual techniques are learned.",
+        "Mixed problems are not labeled with the technique in a way that gives away the answer.",
+        "The plan includes spacing across the 8 weeks.",
+        "The response preserves targeted blocked practice only for techniques that are not yet baseline-mastered."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "My daughter has mastered her grade-level arithmetic and is moving quickly. Her school wants her to spend the extra time on very hard same-grade competition puzzles instead of starting algebra because they say acceleration is developmentally risky. How would you evaluate that choice?",
+      "expected_output": "An evaluation that uses prerequisite mastery as the content-readiness criterion, distinguishes acceleration through mastered material from shallow rushing, considers the learner's goals and external school/social constraints separately, and does not assume same-grade challenge problems are automatically more productive.",
+      "files": [],
+      "assertions": [
+        "The response evaluates algebra readiness by demonstrated prerequisites rather than age alone.",
+        "It distinguishes content readiness from school logistics/social considerations instead of claiming prerequisites settle every real-world factor.",
+        "It does not equate acceleration with skipping content.",
+        "It compares competition puzzles against the learner's goal rather than treating them as inherently deeper.",
+        "It recommends cumulative/independent checks of arithmetic foundations before or during acceleration."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I'm building an adaptive math tutor. I have a prerequisite DAG and per-topic mastery scores. How should the scheduler choose the next task if the learner also has several due reviews? I want to exploit the fact that harder problems often exercise easier skills.",
+      "expected_output": "A software-oriented design that distinguishes prerequisite from encompassing edges, builds frontier candidates, incorporates due reviews, uses advanced tasks as implicit review only when they actually execute the prerequisite, describes fractional/uncertain implicit credit and review compression as Math-Academy-specific ideas, and refuses to invent the undisclosed production formula.",
+      "files": [],
+      "assertions": [
+        "The response distinguishes prerequisite relationships from actual encompassing/implicit-practice relationships.",
+        "It constructs candidate new tasks from the learner's mastery frontier.",
+        "It explicitly accounts for due reviews in task selection.",
+        "It allows advanced tasks to satisfy review only when the component skill is genuinely exercised.",
+        "It labels FIRe/HSRS or equivalent Math Academy mechanisms as source-specific and does not claim to know the exact production algorithm."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Our online course added extra hints to a lesson and first-attempt pass rate jumped from 62% to 91%. Can I conclude the new lesson teaches the topic much better?",
+      "expected_output": "A skeptical content-remediation analysis: higher lesson pass rate could be priming/scaffolding rather than durable learning, so validate with later unprimed reviews, cumulative quizzes, transfer/downstream performance, and inspect whether support fades. Preserve the mastery standard.",
+      "files": [],
+      "assertions": [
+        "The response does not treat the pass-rate increase alone as proof of better learning.",
+        "It identifies priming or scaffold dependence as an alternative explanation.",
+        "It proposes at least one delayed, less-primed measure of independent performance.",
+        "It checks whether learners can succeed after the hints are removed or faded.",
+        "It does not recommend lowering the mastery criterion to preserve the higher pass rate."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "A learner failed a probability lesson once even though they had previously done well on all prerequisites. My system currently marks every prerequisite as unmastered whenever an advanced task fails. Is that a good remediation strategy?",
+      "expected_output": "A confidence-aware rollback/remediation design: one failure with strong prior evidence should not erase the entire prerequisite state, the system should localize the first breakdown/key prerequisites, allow a retry after spacing or another branch, and roll back more aggressively only when evidence is weak or failures repeat.",
+      "files": [],
+      "assertions": [
+        "The response rejects resetting all prerequisites from a single advanced-task failure when prior evidence is strong.",
+        "It recommends localizing the failure to a component/key prerequisite.",
+        "It uses prior evidence/confidence to control rollback magnitude.",
+        "It includes a later retry or additional evidence step.",
+        "Repeated local failures lead to stronger targeted remediation."
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "I only want to spend about an hour or two per month learning astronomy for fun. I don't need tests or mastery; I mostly want interesting ideas and enough understanding to enjoy documentaries. Build me the most efficient learning program using your learning-science framework.",
+      "expected_output": "The skill recognizes a boundary condition: the full high-intensity mastery/talent-development method is mismatched to the user's stated enrichment goal. It should use a lightweight subset (active recall or occasional questions if welcome) without imposing frequent testing, dense deliberate practice, or a prerequisite graph beyond what helps comprehension.",
+      "files": [],
+      "assertions": [
+        "The response explicitly recognizes that the user's goal is enrichment rather than mastery.",
+        "It does not force a high-volume deliberate-practice regimen on the user.",
+        "It does not claim the user must adopt frequent testing to meet their stated goal.",
+        "Any retained learning-science techniques are lightweight and subordinate to enjoyment/comprehension.",
+        "The response explains why the full framework would be a poor fit."
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "I am designing a chemistry curriculum. I want to teach four very similar equilibrium formulas in one week because grouping related material feels coherent, but I also want mixed practice later. How should I sequence acquisition and review so students don't confuse them?",
+      "expected_output": "A nuanced reconciliation of non-interference and interleaving: separate highly confusable novel associations during fragile acquisition, give each a small guided acquisition block to baseline mastery, then deliberately interleave them in later review to train discrimination, with spacing across sessions.",
+      "files": [],
+      "assertions": [
+        "The response does not simply say either 'always group similar topics' or 'always mix everything.'",
+        "It separates confusable concepts during initial fragile acquisition when interference is likely.",
+        "It later interleaves those concepts after each has baseline mastery.",
+        "The later mixed practice requires learners to distinguish which formula applies.",
+        "The review is also spaced over time rather than all occurring in the same session."
+      ]
+    }
+  ]
+}

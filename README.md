@@ -12,6 +12,7 @@ A public collection repo for reusable Hermes and skills-compatible agent skills.
 - **`agy-cli`** — use Antigravity CLI (`agy`) for agent sessions, non-interactive prompts, model discovery, and plugin management.
 - **`local-web-extract`** — extract complete URL content through self-hosted Firecrawl with deterministic Crawl4AI fallback.
 - **`socratic-argument-tutor`** — examine, defend, or stress-test a concrete argument through neutral, evidence-aware guided dialogue.
+- **`high-efficiency-learning-design`** — design, audit, or troubleshoot high-efficiency mastery-based learning, prerequisite sequencing, practice, and retention in hierarchical domains.
 
 ## Install
 
@@ -32,6 +33,7 @@ npx skills add https://github.com/alexferrari88/skills --skill teach
 npx skills add https://github.com/alexferrari88/skills --skill agy-cli
 npx skills add https://github.com/alexferrari88/skills --skill local-web-extract
 npx skills add https://github.com/alexferrari88/skills --skill socratic-argument-tutor
+npx skills add https://github.com/alexferrari88/skills --skill high-efficiency-learning-design
 ```
 
 ## Skill summaries
@@ -59,6 +61,9 @@ Best for complete URL extraction when ordinary agent fetching fails or is incomp
 
 ### `socratic-argument-tutor`
 Best for learning argument analysis by mapping a concrete claim, its grounds, and its warrant, then testing one disputed reasoning step at a time.
+
+### `high-efficiency-learning-design`
+Best for designing, auditing, or troubleshooting mastery-based learning sequences, practice dose, retrieval spacing, interleaving, and diagnostic remediation in hierarchical technical domains.
 
 ## License
 

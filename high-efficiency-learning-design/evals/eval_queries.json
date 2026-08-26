@@ -1,0 +1,82 @@
+[
+  {
+    "query": "My son does fine on math homework the night it's assigned but bombs cumulative quizzes a few weeks later. Can you redesign how he practices and reviews?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm building an adaptive algebra tutor and need rules for deciding which lesson or review problem a learner should see next.",
+    "should_trigger": true
+  },
+  {
+    "query": "I keep getting stuck in calculus and I can't tell whether I need more calculus explanations or whether my algebra foundations are the real problem. Help me diagnose it.",
+    "should_trigger": true
+  },
+  {
+    "query": "Audit my statistics course design: lecture, then 20 same-type exercises, then a unit test, and we never revisit the unit.",
+    "should_trigger": true
+  },
+  {
+    "query": "How should I structure worked examples, practice questions, and fading hints when teaching recursion to novice programmers?",
+    "should_trigger": true
+  },
+  {
+    "query": "I've mastered each chess tactic separately but fail to recognize them in real games. How should I change the training schedule?",
+    "should_trigger": true
+  },
+  {
+    "query": "Should my child move on to algebra now that she has mastered arithmetic, or keep doing much harder elementary-school puzzle problems?",
+    "should_trigger": true
+  },
+  {
+    "query": "Design a placement diagnostic for a prerequisite graph where I want to find a learner's edge without asking hundreds of questions.",
+    "should_trigger": true
+  },
+  {
+    "query": "Our tutoring app's hint system raised lesson pass rates a lot. How do we tell whether it increased real learning or just made the lessons easier?",
+    "should_trigger": true
+  },
+  {
+    "query": "I have six months to relearn math from fractions through precalculus. I want a plan that minimizes forgetting and tells me when I'm ready to advance.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain the chain rule to me with an intuitive example.",
+    "should_trigger": false
+  },
+  {
+    "query": "Solve x^2 - 5x + 6 = 0 and show your work.",
+    "should_trigger": false
+  },
+  {
+    "query": "What does the research say about whether school uniforms improve student discipline?",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize Benjamin Bloom's two-sigma problem in three paragraphs.",
+    "should_trigger": false
+  },
+  {
+    "query": "Give me five fun science activities for a rainy afternoon with a six-year-old. Learning outcomes aren't important; we just want to have fun.",
+    "should_trigger": false
+  },
+  {
+    "query": "I'm writing a blog post about why people dislike standardized tests. Give me arguments on both sides.",
+    "should_trigger": false
+  },
+  {
+    "query": "Recommend three introductory linear algebra textbooks and compare their styles.",
+    "should_trigger": false
+  },
+  {
+    "query": "What is spaced repetition and which flashcard app is most popular right now?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you make this explanation of derivatives clearer and less verbose? [text follows]",
+    "should_trigger": false
+  },
+  {
+    "query": "I teach calculus and I'm curious whether active learning is generally supported by research, but I'm not changing my course right now. Give me a literature overview.",
+    "should_trigger": false
+  }
+]
