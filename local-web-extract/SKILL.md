@@ -62,9 +62,10 @@ The helper reads `~/.config/local-web-extract/config.env`, then allows process e
 FIRECRAWL_API_URL=http://127.0.0.1:8081
 # Legacy alias used only when FIRECRAWL_API_URL is unset:
 FIRECRAWL_BASE_URL=http://127.0.0.1:8081
-FIRECRAWL_API_KEY=fc-selfhost
+# Optional; leave empty when the self-hosted deployment has auth disabled.
+FIRECRAWL_API_KEY=
 CRAWL4AI_API_URL=https://crawler.example.internal
 CRAWL4AI_ENV_FILE=/path/to/crawl4ai.env
 ```
 
-`CRAWL4AI_ENV_FILE` is parsed as data rather than sourced as shell code. It should contain `CRAWL4AI_API_TOKEN`. A directly exported `CRAWL4AI_API_TOKEN` takes precedence.
+`CRAWL4AI_ENV_FILE` is parsed as data rather than sourced as shell code. It should contain `CRAWL4AI_API_TOKEN`. Crawl4AI 0.9+ requires that token for API requests; `GET /health` remains available without authentication. A directly exported `CRAWL4AI_API_TOKEN` takes precedence.

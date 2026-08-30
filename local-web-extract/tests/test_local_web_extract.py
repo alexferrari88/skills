@@ -159,22 +159,37 @@ class FirecrawlConfigurationTests(unittest.TestCase):
                 "FIRECRAWL_BASE_URL": "https://legacy.example/api/",
             }
         )
-        self.assertEqual(endpoint, "https://primary.example/api/v1/scrape")
+        self.assertEqual(endpoint, "https://primary.example/api/v2/scrape")
 
     def test_legacy_base_url_remains_supported(self) -> None:
         endpoint = self._fetch_with(
             {"FIRECRAWL_BASE_URL": "https://legacy.example/api/"}
         )
-        self.assertEqual(endpoint, "https://legacy.example/api/v1/scrape")
+        self.assertEqual(endpoint, "https://legacy.example/api/v2/scrape")
+
+    def test_default_firecrawl_request_does_not_send_placeholder_auth(self) -> None:
+        response = {
+            "success": True,
+            "data": {"markdown": "# Example\n\nUseful body", "metadata": {}},
+        }
+        with (
+            patch.object(local_web_extract, "validate_public_url"),
+            patch.object(local_web_extract, "_post_json", return_value=response) as post_json,
+        ):
+            local_web_extract.make_fetchers({}, timeout=10, min_chars=1)["firecrawl"](
+                "https://example.com"
+            )
+
+        self.assertNotIn("Authorization", post_json.call_args.kwargs["headers"])
 
 
 class EnvFileTests(unittest.TestCase):
     def test_reads_shell_and_colon_style_values_without_executing_file(self) -> None:
         values = local_web_extract.parse_env_text(
-            "XAI_API_KEY: ignored\nCRAWL4AI_API_TOKEN=secret-token\nexport OTHER='value'\n"
+            "XAI_API_KEY: ignored\nCRAWL4AI_API_TOKEN=${CRAWL4AI_API_TOKEN}\nexport OTHER='value'\n"
         )
 
-        self.assertEqual(values["CRAWL4AI_API_TOKEN"], "secret-token")
+        self.assertEqual(values["CRAWL4AI_API_TOKEN"], "${CRAWL4AI_API_TOKEN}")
         self.assertEqual(values["OTHER"], "value")
 
 

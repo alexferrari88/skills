@@ -212,7 +212,7 @@ def make_fetchers(
         or settings.get("FIRECRAWL_BASE_URL")
         or DEFAULT_FIRECRAWL_URL
     ).rstrip("/")
-    firecrawl_key = settings.get("FIRECRAWL_API_KEY", "fc-selfhost")
+    firecrawl_key = settings.get("FIRECRAWL_API_KEY", "")
     crawl4ai_base = settings.get("CRAWL4AI_API_URL", "").rstrip("/")
     crawl4ai_token = settings.get("CRAWL4AI_API_TOKEN", "")
 
@@ -225,10 +225,11 @@ def make_fetchers(
 
     def firecrawl(url: str) -> ExtractionResult:
         validate_public_url(url)
+        headers = {"Authorization": f"Bearer {firecrawl_key}"} if firecrawl_key else {}
         data = _post_json(
-            f"{firecrawl_base}/v1/scrape",
+            f"{firecrawl_base}/v2/scrape",
             {"url": url, "formats": ["markdown", "rawHtml"]},
-            headers={"Authorization": f"Bearer {firecrawl_key}"},
+            headers=headers,
             timeout=timeout,
         )
         return ensure_minimum(parse_firecrawl_response(url, data))
