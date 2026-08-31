@@ -94,6 +94,8 @@ def validate_public_url(url: str) -> str:
         raise ValueError("URL scheme must be http or https")
     if not parsed.hostname:
         raise ValueError("URL must include a hostname")
+    if parsed.username or parsed.password:
+        raise ValueError("URL credentials are not allowed")
     try:
         addresses = {item[4][0] for item in socket.getaddrinfo(parsed.hostname, parsed.port)}
     except socket.gaierror as exc:

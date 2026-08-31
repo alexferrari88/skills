@@ -25,6 +25,10 @@ class UrlValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "http or https"):
             local_web_extract.validate_public_url("file:///etc/passwd")
 
+    def test_rejects_target_credentials(self) -> None:
+        with self.assertRaisesRegex(ValueError, "credentials"):
+            local_web_extract.validate_public_url("https://user:${TARGET_PASSWORD}@example.com")
+
 
 class ResponseParsingTests(unittest.TestCase):
     def test_parses_nested_firecrawl_response(self) -> None:

@@ -24,7 +24,7 @@ For Firecrawl search, site mapping, multi-URL structured extraction, raw API acc
 local-web-extract --json "https://example.com"
 ```
 
-The command validates the target and automatically tries:
+The command validates the target before contacting a provider. It accepts only HTTP(S) URLs that resolve to globally routable addresses and rejects embedded URL credentials. It then automatically tries:
 
 1. self-hosted Firecrawl
 2. self-hosted Crawl4AI if Firecrawl fails or returns inadequate Markdown
@@ -68,4 +68,4 @@ CRAWL4AI_API_URL=https://crawler.example.internal
 CRAWL4AI_ENV_FILE=/path/to/crawl4ai.env
 ```
 
-`CRAWL4AI_ENV_FILE` is parsed as data rather than sourced as shell code. It should contain `CRAWL4AI_API_TOKEN`. Crawl4AI 0.9+ requires that token for API requests; `GET /health` remains available without authentication. A directly exported `CRAWL4AI_API_TOKEN` takes precedence.
+`CRAWL4AI_ENV_FILE` is parsed as data rather than sourced as shell code. It should contain `CRAWL4AI_API_TOKEN`. Crawl4AI 0.9+ requires a token for requests to an exposed server, while a loopback-only server can use a one-off startup token; this helper requires `CRAWL4AI_API_TOKEN` for its `/crawl` request. `GET /health` remains available without authentication. A directly exported `CRAWL4AI_API_TOKEN` takes precedence.
