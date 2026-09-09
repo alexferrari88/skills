@@ -318,7 +318,7 @@ def main(argv: list[str] | None = None) -> int:
             fetchers=make_fetchers(settings, timeout=args.timeout, min_chars=args.min_chars),
         )
     except (ExtractionError, ValueError) as exc:
-        print(json.dumps({"error": str(exc), "url": args.url}), file=sys.stderr)
+        print(json.dumps({"error": str(exc)}), file=sys.stderr)
         return 1
     if args.json:
         print(render_json(result))

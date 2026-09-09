@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import io
 import importlib.util
 import json
 import sys
 import unittest
+from contextlib import redirect_stderr
 from pathlib import Path
 from unittest.mock import patch
 
@@ -28,6 +30,21 @@ class UrlValidationTests(unittest.TestCase):
     def test_rejects_target_credentials(self) -> None:
         with self.assertRaisesRegex(ValueError, "credentials"):
             local_web_extract.validate_public_url("https://user:${TARGET_PASSWORD}@example.com")
+
+    def test_cli_does_not_echo_target_credentials(self) -> None:
+        stderr = io.StringIO()
+        with (
+            patch.object(
+                sys,
+                "argv",
+                ["local_web_extract.py", "https://user:${TARGET_PASSWORD}@example.com", "--json"],
+            ),
+            redirect_stderr(stderr),
+        ):
+            exit_code = local_web_extract.main()
+
+        self.assertEqual(exit_code, 1)
+        self.assertNotIn("${TARGET_PASSWORD}", stderr.getvalue())
 
 
 class ResponseParsingTests(unittest.TestCase):
