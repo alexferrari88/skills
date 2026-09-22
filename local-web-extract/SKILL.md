@@ -68,4 +68,4 @@ CRAWL4AI_API_URL=https://crawler.example.internal
 CRAWL4AI_ENV_FILE=/path/to/crawl4ai.env
 ```
 
-`CRAWL4AI_ENV_FILE` is parsed as data rather than sourced as shell code. It should contain `CRAWL4AI_API_TOKEN`. Crawl4AI 0.9+ requires a token for requests to an exposed server, while a loopback-only server can use a one-off startup token; this helper requires `CRAWL4AI_API_TOKEN` for its `/crawl` request. `GET /health` remains available without authentication. A directly exported `CRAWL4AI_API_TOKEN` takes precedence.
+`CRAWL4AI_ENV_FILE` is parsed as data rather than sourced as shell code. It should contain `CRAWL4AI_API_TOKEN`. Crawl4AI 0.9+ requires authentication for `/crawl`: an exposed server needs a configured token, while a server without a token binds to the container loopback. This helper intentionally requires `CRAWL4AI_API_TOKEN` for its `/crawl` request and does not attempt unauthenticated or log-derived access. `GET /health` remains available without authentication. A directly exported `CRAWL4AI_API_TOKEN` takes precedence.
