@@ -1,0 +1,82 @@
+[
+  {
+    "query": "I want a deeper version of this task, not a bigger one: we need to figure out why our enterprise trial conversion dropped last month. Rewrite my prompt so the agent approaches it like a top expert.",
+    "should_trigger": true
+  },
+  {
+    "query": "Every Monday I manually pull support tickets, tag them in a spreadsheet, and email a summary to product managers. How can we use an agent much more ambitiously here so we actually catch product regressions early?",
+    "should_trigger": true
+  },
+  {
+    "query": "Right now I ask Claude to fix individual bug reports one at a time. What do I need to set up so it can operate at a higher altitude and keep our service regression-free continuously?",
+    "should_trigger": true
+  },
+  {
+    "query": "Our team assumes our high churn is an onboarding problem. Before we spend a quarter rebuilding onboarding, how should we use our agent and raw logs to adversarially test that assumption and find the real earliest signal?",
+    "should_trigger": true
+  },
+  {
+    "query": "We're preparing our Q3 business review deck. Instead of just filling in the slide template with updated numbers, how can we push this to be way more ambitious in altitude, depth, and range?",
+    "should_trigger": true
+  },
+  {
+    "query": "Our API endpoint takes 4 seconds and we're trying to shave 30% off by tweaking a loop. Push our thinking—how would we reframe this problem if we needed it to run in 50ms?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm designing a multi-agent workflow to stress-test our company's annual strategy memo. Which outside disciplines (like a short seller or forensic accountant) should we bring in, and how do I get their real methods instead of cheesy role-play?",
+    "should_trigger": true
+  },
+  {
+    "query": "Look at this analysis plan I wrote for our pricing experiment. What would a field-leading professional do here that I'm not asking for, what raw data should we start from, and what outside judge would prove the result is right?",
+    "should_trigger": true
+  },
+  {
+    "query": "We want to redesign our developer documentation portal, and I feel like our current plan is too conventional and surface-level. Help me reframe what the portal actually needs to do using verbs and bring in techniques from other fields.",
+    "should_trigger": true
+  },
+  {
+    "query": "My agent keeps giving me surface-level markdown tables and generic advice when I ask it to investigate data quality issues. How do I structure the workflow so it uses real instruments and external validation?",
+    "should_trigger": true
+  },
+  {
+    "query": "Convert this 20-line JSON configuration file into YAML and keep the comments.",
+    "should_trigger": false
+  },
+  {
+    "query": "What is the capital of France and what time zone is it in?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you make this email to my landlord about the broken heater sound less angry and more polite?",
+    "should_trigger": false
+  },
+  {
+    "query": "Fix the off-by-one typo on line 84 of `src/utils/pagination.ts` where `page <= totalPages` should be `page < totalPages`.",
+    "should_trigger": false
+  },
+  {
+    "query": "Is the `nginx` systemd service currently running on this machine?",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a git commit message using Conventional Commits for the staged changes in `local-web-extract`.",
+    "should_trigger": false
+  },
+  {
+    "query": "Explain how the quadratic formula is derived from completing the square.",
+    "should_trigger": false
+  },
+  {
+    "query": "Extract the full markdown text from `https://example.com/docs/install` using local-web-extract.",
+    "should_trigger": false
+  },
+  {
+    "query": "Run `pytest tests/test_parser.py` and tell me if all tests pass.",
+    "should_trigger": false
+  },
+  {
+    "query": "Translate these five UI button labels from English into Spanish and German.",
+    "should_trigger": false
+  }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ambitious Problem Solving"
+  short_description: "Elevate tasks and prompts in altitude, depth, and range"
+  default_prompt: "Use $ambitious-problem-solving to make this task deeper and higher-leverage using raw inputs, expert methods, cross-disciplinary lenses, and external verification."

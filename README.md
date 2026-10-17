@@ -13,6 +13,7 @@ A public collection repo for reusable Hermes and skills-compatible agent skills.
 - **`local-web-extract`** — extract complete URL content through self-hosted Firecrawl with deterministic Crawl4AI fallback.
 - **`socratic-argument-tutor`** — examine, defend, or stress-test a concrete argument through neutral, evidence-aware guided dialogue.
 - **`high-efficiency-learning-design`** — design, audit, or troubleshoot high-efficiency mastery-based learning, prerequisite sequencing, practice, and retention in hierarchical domains.
+- **`ambitious-problem-solving`** — elevate tasks, prompts, plans, and workflows across altitude (outcomes and autonomous loops), depth (raw substrates, expert tools, and outside judges), and range (cross-disciplinary methods without role-play).
 
 ## Install
 
@@ -34,6 +35,7 @@ npx skills add https://github.com/alexferrari88/skills --skill agy-cli
 npx skills add https://github.com/alexferrari88/skills --skill local-web-extract
 npx skills add https://github.com/alexferrari88/skills --skill socratic-argument-tutor
 npx skills add https://github.com/alexferrari88/skills --skill high-efficiency-learning-design
+npx skills add https://github.com/alexferrari88/skills --skill ambitious-problem-solving
 ```
 
 ## Skill summaries
@@ -64,6 +66,9 @@ Best for learning argument analysis by mapping a concrete claim, its grounds, an
 
 ### `high-efficiency-learning-design`
 Best for designing, auditing, or troubleshooting mastery-based learning sequences, practice dose, retrieval spacing, interleaving, and diagnostic remediation in hierarchical technical domains.
+
+### `ambitious-problem-solving`
+Best for upgrading under-scoped prompts, plans, analyses, and workflows across altitude (decisions and continuous shadow loops over one-off artifacts), depth (raw data, executable expert instruments, and external validation oracles), and range (noun-to-verb functional reframing and cross-disciplinary methods without theatrical role-play).
 
 ## License
 

@@ -1,0 +1,104 @@
+{
+  "skill_name": "ambitious-problem-solving",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Here is my current prompt for our analytics agent: 'Read our monthly churn summary table and write a 5-slide markdown summary of why users are leaving.' I want a deeper version of this task, not a bigger one. Upgrade this prompt and approach.",
+      "expected_output": "A structured depth upgrade that explicitly answers (1) what a top professional would do that wasn't asked for, (2) the rawest available data substrate (raw event/subscription logs rather than the pre-digested monthly summary), (3) specific executable instruments (SQL/DuckDB, survival/hazard models, cohort decomposition), and (4) an external validation oracle (held-out temporal split or reconciliation check), followed by a concise rewritten prompt.",
+      "files": [],
+      "assertions": [
+        "The response explicitly distinguishes making the task deeper (methodological rigor) from making it bigger (more slides or longer text).",
+        "It replaces the pre-digested monthly summary table with raw user/subscription/event data as the starting substrate.",
+        "It names concrete analytical instruments (such as SQL/DuckDB queries, survival analysis, hazard models, or cohort retention models) rather than markdown table inspection.",
+        "It specifies an outside judge / external validation check (such as out-of-sample / held-out prediction accuracy or ledger reconciliation) rather than model self-review.",
+        "It provides a rewritten, actionable prompt incorporating those four elements."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Every quarter my ops team spends three days copying numbers from CSV exports into our Quarterly Business Review slide template for leadership. How can we use an agent much more ambitiously here?",
+      "expected_output": "An elevation across Altitude, Depth, and Range: moving from filling the template (L0) to causal diagnosis from raw data (L1), surfacing the top 3 urgent decisions with for/against arguments (L2), and designing a continuous mechanism that catches issues earlier, backtested on historical data and run in shadow mode beside the current QBR for a quarter (L3).",
+      "files": [],
+      "assertions": [
+        "The response reframes the QBR around its underlying purpose (helping leadership catch problems early and allocate resources/decisions) rather than just faster slide generation.",
+        "It proposes identifying the most urgent concrete decisions with arguments for and against each direction.",
+        "It proposes a higher-altitude replacement or continuous detection mechanism rather than only automating template population.",
+        "It requires proving the new mechanism on historical data (backtesting that it would have caught past problems sooner).",
+        "It recommends running the new mechanism in parallel / shadow mode alongside the existing QBR before replacing it."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Right now I paste crash stack traces into my coding agent one by one and ask it to fix them. I want to be more ambitious and just tell the agent: 'Keep our desktop app crash-free.' What actually needs to be true for that to work?",
+      "expected_output": "An operational autonomy audit explaining that moving from one-off bug fixes to a continuous crash-free invariant requires wiring up four environment prerequisites: (1) direct crash-report/telemetry ingestion, (2) deterministic mapping from app version to git commit/symbols, (3) cross-platform or target runtime access to reproduce crashes independently, and (4) an external test/verification oracle.",
+      "files": [],
+      "assertions": [
+        "The response explains that higher-altitude autonomy requires workflow/environment changes, not just a higher-level prompt.",
+        "It identifies automated access to raw crash reports or telemetry as a prerequisite.",
+        "It identifies deterministic mapping between deployed app versions/builds and git commits/source state.",
+        "It identifies independent access to the target runtime/OS environment to reproduce the crash.",
+        "It requires an external verification step (automated reproduction test or regression check) so the agent does not self-grade its fixes."
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Our product team is convinced that our Q2 retention drop is an onboarding problem, and they want me to use AI to brainstorm 20 onboarding UI tweaks. How would you approach this more ambitiously and rigorously?",
+      "expected_output": "An adversarial depth approach: treat 'retention drop is an onboarding problem' as an unverified hypothesis to test against raw behavioral logs first, build a cohort/survival model from raw data to find the actual earliest predictive signal of churn, and validate that signal on held-out/unseen data before proposing product changes.",
+      "files": [],
+      "assertions": [
+        "The response challenges the premise that churn is an onboarding problem rather than immediately brainstorming 20 UI tweaks.",
+        "It recommends testing/reproducing the onboarding hypothesis adversarially against raw user event and retention data.",
+        "It proposes searching for earlier or stronger predictive signals of churn using statistical modeling or simulation.",
+        "It requires validating any newly discovered signal on unseen / held-out historical data.",
+        "It avoids vocabulary theater by specifying concrete data slices and analytical checks."
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Our internal analytics page takes 10 seconds to load. My goal is to get it down to 5 seconds by optimizing a few slow functions. How should we think about this if we want an ambitious breakthrough?",
+      "expected_output": "An order-of-magnitude target reframing ('what if the target were 200ms instead of 5s?') to force architectural rethinking (e.g., precomputation, local caching, indexing, eliminating round-trips) paired with profiling on raw traces and an honest benchmark harness as the outside judge.",
+      "files": [],
+      "assertions": [
+        "The response reframes the incremental 10s->5s target into an order-of-magnitude target (such as 100ms-200ms) to expose non-incremental architectural options.",
+        "It explains why extreme targets help: they invalidate minor local tweaks and force rethinking data layout, caching, or round-trips.",
+        "It insists on an external benchmark or profiler harness as the outside judge.",
+        "It includes an integrity guardrail against faking benchmarks, dropping required correctness, or fabricating numbers if the extreme target isn't fully reached."
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "We need to prepare an investment and operational turnaround pitch for our board. I heard that bringing in multiple perspectives like a short seller, a journalist, and a forensic accountant makes agent work more ambitious. How should we run that?",
+      "expected_output": "A Range workflow that first replaces the noun ('a pitch') with functional verbs (convincing skeptical board members of causal truth and resource allocation under uncertainty), then translates each specialist into concrete methods, raw data checks, and failure modes hunted—explicitly banning theatrical persona role-play.",
+      "files": [],
+      "assertions": [
+        "The response reframes the deliverable from a noun ('a pitch') into functional verbs describing what the audience must understand and decide.",
+        "It includes both constructive perspectives and adversarial red-team perspectives (such as short seller and forensic accountant).",
+        "It explicitly warns against theatrical role-play or writing in character ('write like a short seller').",
+        "It translates each specialist into concrete methods/tools (e.g., ledger reconciliation, cohort decay checks, primary-source narrative framing) and specific failure modes.",
+        "If subagents or parallel steps are used, they are assigned independent methodological tasks and verification checks rather than role-play dialogue."
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "I have a meeting in 10 minutes. Please calculate the net retention rate from these three numbers (Starting ARR: $4.2M, Expansion: $0.6M, Churn + Contraction: $0.45M) and also let me know if there's a better way we should be doing this going forward.",
+      "expected_output": "A calibrated Mode C response: immediately computes and verifies the exact NRR ($4.35M / $4.20M = 103.57%) on the first lines so the user is ready for their meeting in 10 minutes, and only then offers a concise, bounded Altitude/Depth upgrade for after the meeting (e.g., reconciling from invoice-level ledgers, separating logo vs. dollar churn by cohort, and automating pre-meeting anomaly checks).",
+      "files": [],
+      "assertions": [
+        "The response immediately provides the exact calculated Net Retention Rate (103.57% or 1.0357) at the very beginning without delay.",
+        "It does not lecture the user or refuse the simple calculation in order to push an ambitious redesign.",
+        "After answering the urgent question, it offers a concise, high-leverage upgrade path (such as raw ledger reconciliation, cohort decomposition, or automated decision triggers)."
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "I'm writing a short melancholic acoustic song for my partner's birthday. Apply your ambitious problem-solving framework to replace this task at a higher altitude and set up an external validation oracle.",
+      "expected_output": "A boundary-aware response recognizing that pure expressive/creative endeavors are a poor fit for Altitude escalation (you don't replace a personal birthday song with an automated resource-allocation loop or an objective software oracle), while optionally offering lightweight Range ideas (adjacent musical textures or production tools) only if helpful to the user's creative goal.",
+      "files": [],
+      "assertions": [
+        "The response explicitly recognizes the boundary condition: Altitude escalation and rigid external oracles are poorly suited to personal expressive/artistic work.",
+        "It does not try to turn the birthday song into a corporate KPI, decision memo, or automated pipeline.",
+        "Any suggestions offered remain subordinate to the user's personal creative intent."
+      ]
+    }
+  ]
+}
