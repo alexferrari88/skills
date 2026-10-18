@@ -48,7 +48,7 @@ local-web-extract --max-chars 100000 --timeout 90 --json "https://example.com"
 
 ## Failure handling
 
-- A non-zero exit means no requested provider returned usable content.
+- A non-zero exit means the command rejected its arguments or URL, or extraction failed. Inspect stderr for details; provider failures are reported there.
 - Surface the reported provider errors; never invent or reconstruct missing page content.
 - If `provider` is `crawl4ai`, mention a Firecrawl warning only when it materially affects the task or indicates degraded infrastructure.
 - If both local providers fail and browser automation is available, use the browser as the next fallback.
